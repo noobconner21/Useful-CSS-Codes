@@ -12,6 +12,11 @@
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
     <script src="script.js" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f3eca7b90.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <nav class="nav">
@@ -34,7 +39,21 @@
       </div>
     </nav>
 
-    
+    <div class="container">
+      <a :href="item.link" v-for="item in animItems">
+        <div
+          :class="{'btn-style5':item.setStyle5,
+          'btn-style4':item.setStyle4,
+          'btn-style3':item.setStyle3,
+          'btn-style2':item.setStyle2,
+          'btn-style1':item.setStyle1,
+          'box btn-style1':item.default} "
+        >
+          {{item.Name}}
+          <i class="fa-solid fa-crown"></i>
+        </div>
+      </a>
+    </div>
 
     <script src="app.js"></script>
   </body>
