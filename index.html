@@ -2,21 +2,58 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Useful CSS Codes-Project SSLaB LK</title>
+    <title>Styler</title>
+    <link rel="stylesheet" href="./Repo_main_page-res/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script
+      src="https://kit.fontawesome.com/5f3eca7b90.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Useful CSS Codes</h1>
-    <p>Made with LOVE by Project SSLAB LK</p>
-    <div class="main-link">
-      <div class="loading-animation-section">
-        <h4>Loading Animations</h4>
-        <div class="link">
-          <a href="./Loading_Animations/Animation_1/index.html">Animation 1</a>
-          <a href="./Loading_Animations/Animation_2/index.html">Animation 2</a>
-        </div>
+    <nav class="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="#" class="logo">Styler</a>
+
+      <ul class="nav-links">
+        <i class="uil uil-times navCloseBtn"></i>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Animation</a></li>
+        <li><a href="#">Usefull css</a></li>
+        <li><a href="#">Boostrap</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+
+      <i class="uil uil-search search-icon" id="searchIcon"></i>
+      <div class="search-box">
+        <i class="uil uil-search search-icon"></i>
+        <input type="text" placeholder="Search here..." />
       </div>
+    </nav>
+
+    <div class="container">
+      <a :href="item.link" v-for="item in animItems">
+        <div
+          :class="{'btn-style5':item.setStyle5,
+          'btn-style4':item.setStyle4,
+          'btn-style3':item.setStyle3,
+          'btn-style2':item.setStyle2,
+          'btn-style1':item.setStyle1,
+          'box btn-style1':item.default} "
+        >
+          {{item.Name}}
+          <i class="fa-solid fa-crown"></i>
+        </div>
+      </a>
     </div>
+
+    <script src="./Repo_main_page-res/app.js"></script>
   </body>
 </html>
